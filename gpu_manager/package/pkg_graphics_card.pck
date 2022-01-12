@@ -115,13 +115,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_graphics_card IS
     
     is_compatible number;
   begin
-    
-    is_compatible := pkg_functions.memory_compatibility(p_mem_size,p_mem_int_width);
-    
-    if (is_compatible = 0) then
-      RAISE pkg_error.ex_incompatible_mem;
-    end if;
-    
+        
     new_graphics_card_name := p_graphics_card_name ;
     new_gpu_chip := p_gpu_chip;
     new_first_release := p_first_release;
@@ -184,6 +178,11 @@ CREATE OR REPLACE PACKAGE BODY pkg_graphics_card IS
            where t.graphics_card_id = p_graphics_card_id;
     end if;
    
+    is_compatible := pkg_functions.memory_compatibility(new_mem_size,new_mem_int_width);
+    
+    if (is_compatible = 0) then
+      RAISE pkg_error.ex_incompatible_mem;
+    end if;
 
     update graphics_card
            set 
