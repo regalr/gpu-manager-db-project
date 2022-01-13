@@ -17,6 +17,10 @@ create or replace package pkg_error is
   ex_incompatible_mem_code CONSTANT NUMBER := -20005;
   PRAGMA EXCEPTION_INIT(ex_incompatible_mem, -20005);
   
+  ex_must_be_int EXCEPTION;
+  ex_must_be_int_code CONSTANT NUMBER := -20006;
+  PRAGMA EXCEPTION_INIT(ex_must_be_int, -20006);
+  
   ex_general EXCEPTION;
   ex_general_code CONSTANT NUMBER := -20001;
   PRAGMA EXCEPTION_INIT(ex_general, -20001);

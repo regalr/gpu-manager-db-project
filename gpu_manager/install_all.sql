@@ -1,4 +1,4 @@
-PROMPT Installing DB...
+szePROMPT Installing DB...
 
 -- Install sequences
 @./sequence/seq_gpu_chip.sql
@@ -38,6 +38,9 @@ PROMPT Installing DB...
 @./type/ty_card_profit.tps
 @./type/ty_card_profit_l.tps
 
+@./type/ty_sales_per_country.tps
+@./type/ty_sales_per_country_l.tps
+
 @./type/ty_mem_type.tps
 @./type/ty_mem_type_l.tps
 @./type/ty_gpu_chip.tps
@@ -53,6 +56,14 @@ PROMPT Installing DB...
 @./type/ty_vendor.tps
 @./type/ty_vendor_l.tps
 
+-- Views
+@./view/view_directx_support.sql
+@./view/view_gpu.sql
+@./view/view_graphics_card_gpu.sql
+@./view/view_memories.sql
+@./view/view_reference_cards.sql
+@./view/view_shipments.sql
+
 -- Packages
 @./package/pkg_error.pck
 @./package/pkg_functions.pck
@@ -63,14 +74,6 @@ PROMPT Installing DB...
 @./package/pkg_mem_type.pck
 @./package/pkg_shipment.pck
 @./package/pkg_vendor.pck
-
--- Views
-@./view/view_directx_support.sql
-@./view/view_gpu.sql
-@./view/view_graphics_card_gpu.sql
-@./view/view_memories.sql
-@./view/view_reference_cards.sql
-@./view/view_shipments.sql
 
 -- Triggers
 @./trigger/trg_mem_type.trg

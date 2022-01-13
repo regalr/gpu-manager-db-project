@@ -11,7 +11,6 @@ begin
 end;
 /
 
-
 begin
    pkg_gpu_chip.update_gpu_chip(6, 'GU-30');
 end;
@@ -171,5 +170,9 @@ select pkg_functions.memory_compatibility(8, 256) from dual;
 select pkg_functions.most_profitable_card from dual;
 /
 select pkg_functions.most_profitable_card(5) from dual;
+/
+select pkg_functions.sales_per_country() from dual;
+/
+select pkg_functions.sales_per_country('a') from dual;
 /
 ---

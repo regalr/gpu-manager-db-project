@@ -51,6 +51,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_graphics_card IS
       RAISE pkg_error.ex_incompatible_mem;
     end if;
     
+    
     insert into graphics_card(graphics_card_id,
                               graphics_card_name,
                               gpu_chip,

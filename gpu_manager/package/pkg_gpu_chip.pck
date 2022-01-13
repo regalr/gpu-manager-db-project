@@ -123,6 +123,13 @@ CREATE OR REPLACE PACKAGE BODY pkg_gpu_chip IS
            where t.gpu_chip_id = p_gpu_chip_id;
     end if;
     
+    if (new_fp16 != TRUNC(new_fp16) )
+    or (new_fp64 != TRUNC(new_fp64) )
+    or (new_int32 != TRUNC(new_int32) )
+    or (new_pt_cores != TRUNC(new_pt_cores) )
+    then
+          RAISE  pkg_error.ex_must_be_int;
+    end if;
     
     update gpu_chip
            set gpu_name = new_gpu_name,
@@ -137,6 +144,9 @@ CREATE OR REPLACE PACKAGE BODY pkg_gpu_chip IS
     
     
     exception     
+      when pkg_error.ex_must_be_int then
+          RAISE_APPLICATION_ERROR( pkg_error.ex_must_be_int_code, 'A sorok szama csak egesz szam lehet!');
+          
       when NO_DATA_FOUND then
         RAISE pkg_error.ex_no_data;
         RAISE_APPLICATION_ERROR( pkg_error.ex_no_data_code, 'Nincs adat.');
@@ -166,7 +176,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_gpu_chip IS
   function show_gpu_chip(p_gpu_chip_id number default null) return ty_gpu_chip_l is
     v_list ty_gpu_chip_l;
   begin
-    
+
     if p_gpu_chip_id is null then
     
         SELECT ty_gpu_chip(t.gpu_chip_id,
@@ -200,7 +210,8 @@ CREATE OR REPLACE PACKAGE BODY pkg_gpu_chip IS
     return v_list;
     
     
-    exception     
+    exception   
+            
       when NO_DATA_FOUND then
         RAISE pkg_error.ex_no_data;
         RAISE_APPLICATION_ERROR( pkg_error.ex_no_data_code, 'Nincs adat.');
