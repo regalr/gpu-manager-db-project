@@ -1,11 +1,11 @@
-CREATE OR REPLACE TRIGGER trg_gpu_chip
-  BEFORE INSERT OR UPDATE ON gpu_chip
+CREATE OR REPLACE TRIGGER trg_manufacturer
+  BEFORE INSERT OR UPDATE ON manufacturer
   FOR EACH ROW
 
 BEGIN
   IF inserting THEN
-    IF :new.gpu_chip_id IS NULL THEN
-      :new.gpu_chip_id := seq_gpu_chip.nextval;
+    IF :new.man_id IS NULL THEN
+      :new.man_id := seq_manufacturer.nextval;
     
     END IF;
   

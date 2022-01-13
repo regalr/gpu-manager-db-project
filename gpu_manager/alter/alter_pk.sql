@@ -4,8 +4,8 @@ ALTER TABLE graphics_card
 ALTER TABLE memory_chip
   ADD CONSTRAINT memory_chip_pk PRIMARY KEY (memory_chip_id);
 
-ALTER TABLE memory_manufacturer
-  ADD CONSTRAINT memory_manufacturer_pk PRIMARY KEY (mem_man_id);
+ALTER TABLE manufacturer
+  ADD CONSTRAINT manufacturer_pk PRIMARY KEY (man_id);
 
 ALTER TABLE mem_type
   ADD CONSTRAINT mem_type_pk PRIMARY KEY (mem_id);

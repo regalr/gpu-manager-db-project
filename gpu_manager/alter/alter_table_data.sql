@@ -28,9 +28,9 @@ values (5, 'GDDR6X');
 
 --memory_manufacturer
 
-insert into memory_manufacturer (mem_man_id,man_name,country,founded)
+insert into manufacturer (man_id,man_name,country,founded)
 values(1, 'Samsung', 'South-Korea', to_date('01-03-1938', 'dd-mm-yyyy'));
-insert into memory_manufacturer (mem_man_id,man_name,country,founded)
+insert into manufacturer (man_id,man_name,country,founded)
 values(2, 'TSMC', 'Taiwan', to_date('21-02-1987', 'dd-mm-yyyy'));
 
 --gpu_chip

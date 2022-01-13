@@ -98,23 +98,23 @@ select pkg_memory_chip.show_memory_chip from dual;
 
 
 begin
-   pkg_memory_manufacturer.add_memory_manufacturer(p_man_name => 'MemoFacturer',
+   pkg_manufacturer.add_manufacturer(p_man_name => 'MemoFacturer',
                                                    p_country  => 'USA',
                                                    p_founded  => sysdate);
 end;
 /
 
 begin
-   pkg_memory_manufacturer.update_memory_manufacturer(3, 'MemoryMaker');
+   pkg_manufacturer.update_manufacturer(3, 'MemoryMaker');
 end;
 /
 
 begin
-   pkg_memory_manufacturer.delete_memory_manufacturer(3);
+   pkg_manufacturer.delete_manufacturer(3);
 end;
 /
 
-select pkg_memory_manufacturer.show_memory_manufacturer from dual;
+select pkg_manufacturer.show_manufacturer from dual;
 /
 ---
 
@@ -146,6 +146,8 @@ begin
    pkg_vendor.add_vendor(p_vendor_name => 'Acer', p_country => 'Taiwan');
 end;
 /
+
+
 
 begin
    pkg_vendor.update_vendor(6, 'Lenovo');

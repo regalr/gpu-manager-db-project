@@ -5,7 +5,7 @@ PROMPT Installing DB...
 @./sequence/seq_graphics_card.sql
 @./sequence/seq_mem_seq.sql
 @./sequence/seq_memory_chip.sql
-@./sequence/seq_memory_manufacturer.sql
+@./sequence/seq_manufacturer.sql
 @./sequence/seq_shipment.sql
 @./sequence/seq_vendor.sql
                      
@@ -13,7 +13,7 @@ PROMPT Installing DB...
 -- Install tables
 @./table/01_vendor_table.sql
 @./table/01_shipment_table.sql
-@./table/01_memory_manufacturer_table.sql
+@./table/01_manufacturer_table.sql
 @./table/01_memory_chip_table.sql
 @./table/01_mem_type_table.sql
 @./table/01_graphics_card_table.sql
@@ -21,7 +21,7 @@ PROMPT Installing DB...
 
 @./table/01_vendor_table_h.sql
 @./table/01_shipment_table_h.sql
-@./table/01_memory_manufacturer_table_h.sql
+@./table/01_manufacturer_table_h.sql
 @./table/01_memory_chip_table_h.sql
 @./table/01_mem_type_table_h.sql
 @./table/01_graphics_card_table_h.sql
@@ -49,8 +49,8 @@ PROMPT Installing DB...
 @./type/ty_graphics_card_l.tps
 @./type/ty_memory_chip.tps
 @./type/ty_memory_chip_l.tps
-@./type/ty_memory_manufacturer.tps
-@./type/ty_memory_manufacturer_l.tps
+@./type/ty_manufacturer.tps
+@./type/ty_manufacturer_l.tps
 @./type/ty_shipment.tps
 @./type/ty_shipment_l.tps
 @./type/ty_vendor.tps
@@ -70,7 +70,7 @@ PROMPT Installing DB...
 @./package/pkg_gpu_chip.pck
 @./package/pkg_graphics_card.pck
 @./package/pkg_memory_chip.pck
-@./package/pkg_memory_manufacturer.pck
+@./package/pkg_manufacturer.pck
 @./package/pkg_mem_type.pck
 @./package/pkg_shipment.pck
 @./package/pkg_vendor.pck
@@ -84,8 +84,8 @@ PROMPT Installing DB...
 @./trigger/trg_graphics_card_h.trg
 @./trigger/trg_memory_chip.trg
 @./trigger/trg_memory_chip_h.trg
-@./trigger/trg_memory_manufacturer.trg
-@./trigger/trg_memory_manufacturer_h.trg
+@./trigger/trg_manufacturer.trg
+@./trigger/trg_manufacturer_h.trg
 @./trigger/trg_shipment.trg
 @./trigger/trg_shipment_h.trg
 @./trigger/trg_vendor.trg
